@@ -5,6 +5,10 @@ Follow this YouTube video to download and put the mysql-connector-java to the pr
 Follow this YouTube video to configure the data sources
 - https://www.youtube.com/watch?v=-yiL99KFeng
 
+Set the SQL Dialects to MariaDB
+> File > Settings > Languages & Frameworks > SQL Dialects
+> Set the Global SQL Dialects and Project SQL Dialects to "MariaDB"
+
 
 
 
