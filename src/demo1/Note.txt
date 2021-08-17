@@ -3,7 +3,7 @@ Follow this YouTube video to download and put the mysql-connector-java to the pr
 - https://www.youtube.com/watch?v=e8g9eNnFpHQ&t=115s
 
 Follow this YouTube video to configure the data sources
-- 
+- https://www.youtube.com/watch?v=-yiL99KFeng
 
 
 

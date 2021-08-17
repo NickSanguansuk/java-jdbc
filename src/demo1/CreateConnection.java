@@ -31,6 +31,13 @@ public class CreateConnection {
                 System.out.println("id = " + rs.getInt("id") + ", name = " + rs.getString("firstName") + " " + rs.getString("lastName") + ", email = " + rs.getString("email"));
             }
 
+            ResultSet rs2 = stmt.executeQuery("SELECT * FROM userrole");
+
+            //
+            while (rs2.next()) {
+                System.out.println("id = " + rs2.getInt("id") + ", userId = " + rs2.getInt("userId") + ", role = " + rs2.getString("role"));
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
