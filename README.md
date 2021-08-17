@@ -1,1 +1,1 @@
-# java-jdbc-demo
+# java-jdbc
