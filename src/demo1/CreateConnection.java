@@ -1,4 +1,4 @@
-package jdbc_demo;
+package demo1;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -2,8 +2,7 @@
 Follow this YouTube video to download and put the mysql-connector-java to the project
 - https://www.youtube.com/watch?v=e8g9eNnFpHQ&t=115s
 
-Follow this YouTube video to set git version control for the project
--
+
 
 
 
