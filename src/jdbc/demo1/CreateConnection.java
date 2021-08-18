@@ -9,9 +9,6 @@ public class CreateConnection {
 
     public static void main(String[] args) {
 
-        // Follow this YouTube video to download and put the mysql-connector-java to the project
-        // https://www.youtube.com/watch?v=e8g9eNnFpHQ&t=115s
-
         try {
             // loads the JDBC driver for Mysql / MariaDB
             Class.forName("com.mysql.cj.jdbc.Driver");
