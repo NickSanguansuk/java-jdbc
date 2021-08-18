@@ -1,45 +1,69 @@
 package jdbc.demo1;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 public class CreateConnection {
 
     public static void main(String[] args) {
 
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+
         try {
-            // loads the JDBC driver for Mysql / MariaDB
+            // Loads the JDBC driver for Mysql / MariaDB
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            // creates connection using a connection URL
-            Connection conn = DriverManager.getConnection(
+            // Creates connection using a connection URL
+            conn = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/shoestore", "root", "root");
 
-            // crating a statement which we will run SQL
-            Statement stmt = conn.createStatement();
+            // Crating a statement which we will run SQL
+            stmt = conn.createStatement();
 
-            // run an SQL statement and capture the result set
-            ResultSet rs = stmt.executeQuery("SELECT * FROM user");
+            // Run an SQL statement and capture the result set
+            rs = stmt.executeQuery("SELECT * FROM users");
 
-            //
+            // Printing
             while (rs.next()) {
                 System.out.println("id = " + rs.getInt("id") + ", name = " + rs.getString("firstName") + " " + rs.getString("lastName") + ", email = " + rs.getString("email"));
             }
 
-            ResultSet rs2 = stmt.executeQuery("SELECT * FROM userrole");
+            rs = stmt.executeQuery("SELECT * FROM userroles");
 
-            //
-            while (rs2.next()) {
-                System.out.println("id = " + rs2.getInt("id") + ", userId = " + rs2.getInt("userId") + ", role = " + rs2.getString("role"));
+            // Printing
+            while (rs.next()) {
+                System.out.println("id = " + rs.getInt("id") + ", userId = " + rs.getInt("userId") + ", role = " + rs.getString("role"));
             }
 
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (stmt != null) {
+                        stmt.close();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                } finally {
+                    try {
+                        if (conn != null) {
+                            conn.close();
+                        }
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
         }
 
-        System.out.println("Connection success");
-
+        System.out.println("End of main()");
     }
 }
