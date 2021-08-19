@@ -8,7 +8,7 @@ public class Main {
 
         System.out.println("----------");
 
-        List<User> users = new UserDAO().getUsersByLastName("Sanguansuk");
+        List<User> users = new UserDao().getUsersByLastName("Sanguansuk");
 
         for (User user : users) {
             System.out.println(user);
@@ -16,7 +16,7 @@ public class Main {
 
         System.out.println("----------");
 
-        List<UserRole> userRoles = new UserRoleDAO().getUserRolesByLastName("Sanguansuk");
+        List<UserRole> userRoles = new UserRoleDao().getUserRolesByLastName("Sanguansuk");
 
         for (UserRole userRole : userRoles) {
             System.out.println(userRole);

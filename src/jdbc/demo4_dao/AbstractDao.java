@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class AbstractDAO {
+public class AbstractDao {
     // Data
     private static final String IP_ADDRESS = "127.0.0.1";
     private static final String PORT = "3306";
@@ -16,7 +16,7 @@ public class AbstractDAO {
     private Connection connection;
 
     // Constructors
-    public AbstractDAO() {
+    public AbstractDao() {
         this.createConnection();
     }
 
