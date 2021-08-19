@@ -1,4 +1,4 @@
-package jdbc.demo2;
+package jdbc.demo4_dao;
 
 public class User {
     // Data

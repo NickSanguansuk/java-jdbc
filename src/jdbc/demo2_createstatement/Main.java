@@ -1,10 +1,10 @@
-package jdbc.demo2;
+package jdbc.demo2_createstatement;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CreateConnection {
+public class Main {
 
     public List<User> getAllUsers() {
         Connection conn = null;
@@ -165,7 +165,7 @@ public class CreateConnection {
             stmt = conn.createStatement();
 
             // Run an SQL statement and capture the result set
-            rs = stmt.executeQuery("SELECT * FROM users WHERE lastName = '" + lastNameValue + "'");
+            rs = stmt.executeQuery("SELECT * FROM users WHERE lastName = \'" + lastNameValue + "\'");
 
             // Parse ResultSet
             while (rs.next()) {
@@ -217,7 +217,7 @@ public class CreateConnection {
     }
 
     public static void main(String[] args) {
-        List<User> users = new CreateConnection().getAllUsers();
+        List<User> users = new Main().getAllUsers();
 
         for (User user : users) {
             System.out.println(user);
@@ -225,7 +225,7 @@ public class CreateConnection {
 
         System.out.println("----------");
 
-        List<User> users2 = new CreateConnection().getUserById(2);
+        List<User> users2 = new Main().getUserById(2);
 
         for (User user : users2) {
             System.out.println(user);
@@ -233,11 +233,13 @@ public class CreateConnection {
 
         System.out.println("----------");
 
-        List<User> users3 = new CreateConnection().getUserByLastName("Sanguansuk");
+        List<User> users3 = new Main().getUserByLastName("Sanguansuk");
 
         for (User user : users3) {
             System.out.println(user);
         }
+
+        System.out.println("----------");
 
         System.out.println("Connection success");
     }
