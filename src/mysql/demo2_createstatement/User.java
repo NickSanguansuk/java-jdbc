@@ -1,4 +1,4 @@
-package jdbc.demo2_createstatement;
+package mysql.demo2_createstatement;
 
 public class User {
     // Data

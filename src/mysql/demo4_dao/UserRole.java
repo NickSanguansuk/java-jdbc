@@ -1,4 +1,4 @@
-package jdbc.demo4_dao;
+package mysql.demo4_dao;
 
 public class UserRole {
     // Data

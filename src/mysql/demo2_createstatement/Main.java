@@ -1,4 +1,4 @@
-package jdbc.demo2_createstatement;
+package mysql.demo2_createstatement;
 
 import java.sql.*;
 import java.util.ArrayList;

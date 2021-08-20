@@ -1,6 +1,6 @@
-package jdbc.demo3_preparestatement;
+package mysql.demo3_preparestatement;
 
-import jdbc.demo2_createstatement.User;
+import mysql.demo2_createstatement.User;
 
 import java.sql.*;
 import java.util.ArrayList;

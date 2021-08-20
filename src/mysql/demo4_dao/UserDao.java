@@ -1,4 +1,4 @@
-package jdbc.demo4_dao;
+package mysql.demo4_dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,7 +16,8 @@ public class UserDao extends AbstractDao {
 
         try {
             // run an SQL statement and capture the result set
-            String sql = "SELECT * FROM users WHERE lastName = ?";
+            //String sql = "SELECT * FROM users WHERE lastName = ?";
+            String sql = SqlQueries.getUserByLastNameQuery;
             System.out.println(sql);
             stmt = createPreparedStatement(sql);
 
@@ -67,7 +68,7 @@ public class UserDao extends AbstractDao {
         return users;
     }
 
-    public void updateUserFirstName(String firstNameValue, Integer idValue) {
+    public void updateUserFirstNameById(String firstNameValue, Integer idValue) {
         PreparedStatement stmt = null;
         ResultSet rs = null;
 
@@ -75,7 +76,8 @@ public class UserDao extends AbstractDao {
 
         try {
             // run an SQL statement and capture the result set
-            String sql = "UPDATE users SET firstName = ? WHERE id = ?";
+            //String sql = "UPDATE users SET firstName = ? WHERE id = ?";
+            String sql = SqlQueries.updateUserFirstNameByIdQuery;
             System.out.println(sql);
 
             stmt = createPreparedStatement(sql);
@@ -175,7 +177,7 @@ public class UserDao extends AbstractDao {
         //return users;
     }
 
-    public void deleteUser(Integer idValue) {
+    public void deleteUserById(Integer idValue) {
         PreparedStatement stmt = null;
         ResultSet rs = null;
 
@@ -183,7 +185,8 @@ public class UserDao extends AbstractDao {
 
         try {
             // run an SQL statement and capture the result set
-            String sql = "DELETE FROM users WHERE id = ?;";
+            //String sql = "DELETE FROM users WHERE id = ?;";
+            String sql = SqlQueries.deleteUserByIdQuery;
             System.out.println(sql);
 
             stmt = createPreparedStatement(sql);
@@ -191,8 +194,8 @@ public class UserDao extends AbstractDao {
             stmt.setInt(1, idValue);
             System.out.println(sql);
 
-            int updatedRows = stmt.executeUpdate();
-            System.out.println("Rows updated = " + updatedRows);
+            int rowsAffected = stmt.executeUpdate();
+            System.out.println("Rows affected = " + rowsAffected);
 
         } catch (Exception e) {
             e.printStackTrace();

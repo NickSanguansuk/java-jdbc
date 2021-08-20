@@ -1,4 +1,4 @@
-package jdbc.demo4_dao;
+package mysql.demo4_dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
