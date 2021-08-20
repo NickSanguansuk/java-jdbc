@@ -1,5 +1,7 @@
 
-Follow this YouTube video to download and put the mysql-connector-java to the project
+The PPT on Per Scholas, Week 6, Wednesday is explaining how to use the "mariadb-java-client" with the project (demo2 - for mariadb)
+
+Follow this YouTube video to download and put the "mysql-connector-java" to the project
 - https://www.youtube.com/watch?v=e8g9eNnFpHQ&t=115s
 
 Follow this YouTube video to configure the data sources

@@ -13,10 +13,13 @@ public class CreateConnection {
         try {
             // Loads the JDBC driver for Mysql / MariaDB
             Class.forName("com.mysql.cj.jdbc.Driver");
+            //Class.forName("org.mariadb.jdbc.Driver");
 
             // Creates connection using a connection URL
             conn = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/shoestore", "root", "root");
+            //conn = DriverManager.getConnection(
+            //        "jdbc:mariadb://localhost:3306/shoestore", "root", "root");
 
             // Crating a statement which we will run SQL
             stmt = conn.createStatement();
